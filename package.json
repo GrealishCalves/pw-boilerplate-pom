@@ -1,0 +1,26 @@
+{
+  "name": "cal-automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "example": "npx playwright test",
+    "mobile": "npx playwright test tests/example.spec.ts --config=playwright.config.mobile.ts --project=mobileSafari"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.28.1",
+    "playwright-core": "^1.28.1",
+    "plop": "^3.1.1"
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "package.json"
+      ],
+      "url": "http://json.schemastore.org/package",
+      "schema": true
+    }
+  ]
+}

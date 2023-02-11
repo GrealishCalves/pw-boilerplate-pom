@@ -33,14 +33,14 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the test
 
 ```bash
   npm run example
 ```
 
 
-## folder Structure 
+## Folder Structure 
 
 ```bash
 .

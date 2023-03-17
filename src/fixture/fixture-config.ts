@@ -1,10 +1,15 @@
 import { test as fixture } from '@playwright/test';
-import { pagesType } from './fixture-type';
 import { OptionsType } from '../common/interface/common-types';
 import { LoginPageFrameLocators, LoginPageLocators } from '../page-objects/login-page/LoginPage-constants';
 import { LoginPage } from '../page-objects/login-page/LoginPage-page';
+import { ApiService } from '../common/services/api.service';
+import { PagesType, ServiceType } from '../fixture/fixture-type';
 
-const test = fixture.extend<pagesType>({
+const test = fixture.extend<PagesType & ServiceType>({
+  ApiService: async ({ page }, use) => {
+    await use(new ApiService(page));
+  },
+
   loginPage: async ({ page }, use) => {
     const options: OptionsType = {
       page,

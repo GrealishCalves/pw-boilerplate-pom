@@ -1,6 +1,8 @@
 import { Locator } from '@playwright/test';
 
-export const LoginPageLocators = {};
+export const LoginPageLocators = {
+  POPUP: '.loan-popup-x',
+};
 
 export const LoginPageFrameLocators = {
   USERNAME_INPUT: '#mat-input-0',

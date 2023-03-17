@@ -11,7 +11,7 @@ export interface APIDefinitions {
 
 export interface PageData<T extends APIDefinitions> {
   url: string;
-  apis: T | null;
+  apis: T;
   username?: string | null | undefined;
   password?: string | null | undefined;
 }
@@ -19,4 +19,3 @@ export interface PageData<T extends APIDefinitions> {
 export interface LoginPageDataApi extends APIDefinitions {
   configProdJson: APIEndpoint;
 }
-

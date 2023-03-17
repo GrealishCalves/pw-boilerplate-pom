@@ -12,5 +12,4 @@ export type OptionsType = {
 export interface PageObject {
   wait(time: number): Promise<void>;
   pause(): Promise<void>;
-  waitForState(state?: 'load' | 'domcontentloaded' | 'networkidle'): Promise<void>;
 }

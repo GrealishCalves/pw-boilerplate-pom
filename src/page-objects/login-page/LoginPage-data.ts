@@ -8,6 +8,6 @@ export const loginPageData: PageData<LoginPageDataApi> = {
       url: 'https://connect.cal-online.co.il/assets/config/config.prod.json',
     },
   },
-  username: '310430582',
-  password: '7215',
+  username: '',
+  password: '',
 };

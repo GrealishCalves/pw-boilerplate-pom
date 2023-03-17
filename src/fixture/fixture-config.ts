@@ -14,7 +14,7 @@ const test = fixture.extend<PagesType & ServiceType>({
     const options: OptionsType = {
       page,
       pageLocatorsObject: LoginPageLocators,
-      frameSelector: '#ccBusiness',
+      frameSelector: '#calconnectIframe',
       frameLocatorsObject: LoginPageFrameLocators,
     };
     await use(new LoginPage(options));

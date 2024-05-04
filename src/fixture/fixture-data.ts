@@ -3,13 +3,17 @@ export type DataTestType = {
   dynamicDataOrFix: unknown;
 };
 
+export enum DataType {
+  DEFAULT = 'default',
+}
+
 export const simpleValues = {
-  dataType: 'default',
+  dataType: DataType.DEFAULT,
 };
 
 export const autoTrueFixtures = {
   dynamicDataOrFix: [
-    async ({ dataType }: { dataType: any }, use: (currentData: unknown) => Promise<unknown>) => {
+    async ({ dataType }: { dataType: DataType }, use: (currentData: unknown) => Promise<unknown>) => {
       if (dataType !== 'default') {
         return;
       }

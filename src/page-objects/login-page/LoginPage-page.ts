@@ -6,10 +6,6 @@ import { BasePage } from '../abstract-page/base-page';
 export class LoginPage extends BasePage<LoginPageLocatorsType, LoginPageFrameLocatorsType> {
   private readonly pageData = data.LOGIN_PAGE;
 
-  constructor(options: OptionsType) {
-    super(options);
-  }
-
   public async visit(): Promise<void> {
     await this.page.goto(this.pageData.URL);
   }

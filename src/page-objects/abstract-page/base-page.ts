@@ -6,7 +6,7 @@ export abstract class BasePage<T, U> implements PageObject {
   protected readonly locators: T;
   protected readonly frameLocators: U;
 
-  constructor({ page, pageLocatorsObject, frameSelector, frameLocatorsObject }: OptionsType) {
+  constructor(page, pageLocatorsObject, frameSelector, frameLocatorsObject: any) {
     this.page = page;
     this.locators = pageLocatorsObject ? this.mapLocators(page, pageLocatorsObject) : ({} as T);
     this.frameLocators =

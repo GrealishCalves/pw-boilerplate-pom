@@ -1,19 +1,15 @@
 import { test as fixture } from '@playwright/test';
-import { pagesType } from './fixture-type';
 import { OptionsType } from '../common/interface/common-types';
-import { LoginPageFrameLocators, LoginPageLocators } from '../page-objects/login-page/LoginPage-constants';
-import { LoginPage } from '../page-objects/login-page/LoginPage-page';
+import { PageManager, PagesType } from '../page-objects/pageManger';
+import { DataTestType, dataTestFixtures } from './fixture-data';
 
-const test = fixture.extend<pagesType>({
-  loginPage: async ({ page }, use) => {
-    const options: OptionsType = {
-      page,
-      pageLocatorsObject: LoginPageLocators,
-      frameSelector: '#ccBusiness',
-      frameLocatorsObject: LoginPageFrameLocators,
-    };
-    await use(new LoginPage(options));
+export type FixturesType = PagesType & DataTestType;
+
+const test = fixture.extend<FixturesType>({
+  pm: async ({ page }, use) => {
+    await use(new PageManager(page));
   },
+  ...dataTestFixtures,
 });
 
 export { test, OptionsType };
